@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [flipkart]" parallel="tests">
+  <parameter name="browsername" value="firefox"/>
+  <parameter name="appurl" value="https://www.flipkart.com/"/>
+  <listeners>
+    <listener class-name="com.flipkart.businessscripts.TestListener"/>
+    <listener class-name="com.flipkart.businessscripts.RetryListenerClass"/>
+  </listeners>
+  <test name="chrome testing(failed)" parallel="tests">
+    <parameter name="browsername" value="chrome"/>
+    <parameter name="appurl" value="https://www.flipkart.com/"/>
+    <groups>
+      <run>
+        <include name="regression"/>
+      </run>
+    </groups>
+    <classes>
+      <class name="com.flipkart.businessscripts.Men">
+        <methods>
+          <include name="addtocartforshoes"/>
+          <include name="methodprotect"/>
+          <include name="sportsitemtocart"/>
+        </methods>
+      </class> <!-- com.flipkart.businessscripts.Men -->
+      <class name="com.flipkart.businessscripts.Electronics">
+        <methods>
+          <include name="addMIMobiles"/>
+          <include name="launchbrowser"/>
+          <include name="launchbrowser"/>
+          <include name="movetoelectronics"/>
+          <include name="movetoelectronics"/>
+          <include name="samsung"/>
+        </methods>
+      </class> <!-- com.flipkart.businessscripts.Electronics -->
+    </classes>
+  </test> <!-- chrome testing(failed) -->
+</suite> <!-- Failed suite [flipkart] -->
