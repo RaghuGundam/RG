@@ -2,8 +2,7 @@
 <suite name="flipkart"> 
 
 	<test name="chrome testing">
-	<parameter name="browsername" value="chrome"></parameter>
-	<parameter name="appurl" value="https://www.flipkart.com/"></parameter>
+
 	<groups>
 		<run>
 			<include name="regression"></include>

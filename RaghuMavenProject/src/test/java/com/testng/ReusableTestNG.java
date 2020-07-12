@@ -20,12 +20,13 @@ import org.testng.annotations.Parameters;
 
 public class ReusableTestNG {
 	public static WebDriver driver;
+	public static String browsername = "chrome";
 	public static Actions objname;
 	 //static WebDriver driver=new ChromeDriver(); 
-	@Parameters({"browsername","appurl"})
+	//@Parameters({"browsername","appurl"})
 	@BeforeTest(groups={"regression","smoke","sanity"})
 	//@BeforeSuite(groups={"regression","smoke","sanity"})
-	public static void launchbrowser(String browsername, String appurl) throws InterruptedException{
+	public static void launchbrowser() throws InterruptedException{
 		if(browsername.equalsIgnoreCase("chrome")){
 	   System.setProperty("webdriver.chrome.driver", "C:\\Users\\rishitha\\Downloads\\chromedriver_win32\\chromedriver.exe");  
 	   driver=new ChromeDriver(); 
@@ -33,7 +34,7 @@ public class ReusableTestNG {
 			System.setProperty("webdriver.gecko.driver", "C:\\Users\\rishitha\\Downloads\\geckodriver-v0.26.0-win64\\geckodriver.exe");  
 			   driver=new FirefoxDriver(); 
 		}
-	   driver.get(appurl); 
+	   driver.get("https://www.flipkart.com/"); 
 	   Thread.sleep(3000);
 	   click(By.xpath("/html/body/div[2]/div/div/button"));
 	 // driver.get("https://www.flipkart.com/samsung-galaxy-m11-black-64-gb/p/itm2b3e5356a5b97?pid=MOBFRZZH4HHGU6YT&lid=LSTMOBFRZZH4HHGU6YTXZHBJZ&marketplace=FLIPKART&srno=b_1_2&otracker=CLP_filters&fm=neo%2Fmerchandising&iid=a45bbbc9-f280-4002-ab65-edff0df5e70b.MOBFRZZH4HHGU6YT.SEARCH&ppt=sp&ppn=sp&ssid=02e3vv292o0000001593917390318");
